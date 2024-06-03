@@ -4,9 +4,10 @@
     {
         public int Id { get; set; }
         public string Username { get; set; }
-        public string Password { get; set; }
+        public  string Password { get; set; }
         public string Status { get; set; }
     }
+
     public class CardRequest
     {
         public int CompteId { get; set; }
@@ -30,4 +31,48 @@
         public double PlafondHebdoDAB { get; set; }
         public double PlafondHebdoTPE { get; set; }
     }
+
+    public class VirementRequest
+    {
+        public string NumCpt { get; set; }
+        public decimal Montant { get; set; }
+        public string TypeVirement { get; set; }
+        public DateTime DateInitiation { get; set; }
+        public string CompteBeneficiaire { get; set; }
+        public int UtilisateurID { get; set; } // Ajouter cette ligne
+
+        public string  Motif { get; set; }
+
+    }
+
+    public class Virement
+    {
+        public int Id { get; set; }
+        public string NumCpt { get; set; }
+        public decimal Montant { get; set; }
+        public string TypeVirement { get; set; }
+        public bool Validation { get; set; }
+        public DateTime DateInitiation { get; set; }
+        public DateTime? DateValidation { get; set; }
+        public string CompteBeneficiaire { get; set; }
+        public string Statut { get; set; } // "Initialisé", "Validé", "Annulé"
+    }
+    public class VirementValidationRequest
+    {
+        public int VirementId { get; set; }
+    }
+    public class Beneficiary
+        {
+            public string NumCpt { get; set; }
+            public decimal Montant { get; set; }
+            public string CompteBeneficiaire { get; set; }
+            public string NomPrenom { get; set; }
+            public string RIB { get; set; }
+            public string Motif { get; set; }
+            public string Reference { get; set; }
+        }
+    
+
+
+
 }
